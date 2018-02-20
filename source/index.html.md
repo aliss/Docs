@@ -98,7 +98,7 @@ This endpoint searches ALISS services.
 
 ### HTTP Request
 
-`GET http://beta.aliss.org/api/v3/search/`
+`GET https://www.aliss.org/api/v3/search/`
 
 ### Query Parameters
 
@@ -112,7 +112,7 @@ radius | False | 5000 | The radius from the postcode that you wish the search to
 
 ### Filter by categories
 
-`GET http://beta.aliss.org/api/v3/search/?categories=money-advice,food&postcode=G2 4AA`
+`GET https://www.aliss.org/api/v3/search/?categories=money-advice,food&postcode=G2 4AA`
 
 You can filter by category by using the category query parameter and passing in a category slug.
 
