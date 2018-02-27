@@ -112,9 +112,15 @@ radius | False | 5000 | The radius from the postcode that you wish the search to
 
 ### Filter by categories
 
-`GET https://www.aliss.org/api/v3/search/?categories=money-advice,food&postcode=G2 4AA`
+`GET https://www.aliss.org/api/v3/search/?category=money-advice&postcode=G2 4AA`
 
 You can filter by category by using the category query parameter and passing in a category slug.
+
+### Filter by location type
+
+`GET https://www.aliss.org/api/v3/search/?location_type=local&postcode=G2 4AA`
+
+You can filter by location type by using the location type query parameter and passing in either 'local' or 'national'.
 
 
 # Categories
