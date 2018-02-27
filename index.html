@@ -364,9 +364,13 @@
 </tr>
 </tbody></table>
 <h3 id='filter-by-categories'>Filter by categories</h3>
-<p><code>GET https://www.aliss.org/api/v3/search/?categories=money-advice,food&amp;postcode=G2 4AA</code></p>
+<p><code>GET https://www.aliss.org/api/v3/search/?category=money-advice&amp;postcode=G2 4AA</code></p>
 
 <p>You can filter by category by using the category query parameter and passing in a category slug.</p>
+<h3 id='filter-by-location-type'>Filter by location type</h3>
+<p><code>GET https://www.aliss.org/api/v3/search/?location_type=local&amp;postcode=G2 4AA</code></p>
+
+<p>You can filter by location type by using the location type query parameter and passing in either &#39;local&#39; or &#39;national&#39;.</p>
 <h1 id='categories'>Categories</h1><h2 id='list-all-categories'>List all Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/categories/"</span>
 </code></pre>
 <blockquote>
