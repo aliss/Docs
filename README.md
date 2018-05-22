@@ -1,8 +1,8 @@
 # ALISS API Docs
 
-A fork of [Slate](https://github.com/lord/slate) docs generator.
+The documetation for the [ALISS.org API](https://www.aliss.org), available to [view here](http://docs.aliss.org).
 
-These docs describe the [ALISS.org API](https://www.aliss.org).
+Built with the [Slate](https://github.com/lord/slate) docs generator.
 
 
 Getting Started with Slate
