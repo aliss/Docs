@@ -2,6 +2,8 @@
 
 A fork of [Slate](https://github.com/lord/slate) docs generator.
 
+These docs describe the [ALISS.org API](https://aliss.org).
+
 
 Getting Started with Slate
 ------------------------------
