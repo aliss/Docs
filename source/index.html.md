@@ -11,7 +11,7 @@ search: true
 
 Welcome to the ALISS API! You can use our API to search for Health and Wellbeing services in Scotland.
 
-ALISS is open source find us at (https://github.com/ALISS).
+Both these docs and ALISS are open source. If you'd like to improve [this documentation](https://github.com/aliss/Docs) or [ALISS itself](https://github.com/aliss/ALISS) please add an issue or submit a pull request.
 
 # Search
 
