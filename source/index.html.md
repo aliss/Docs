@@ -15,7 +15,10 @@ ALISS is open source find us at (https://github.com/ALISS).
 
 # Search
 
-## Overview
+Thes search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.
+
+Services can be delivered at a specific location, or they can be delivered across a whole area or areas. Locations are specific to the organisations that run the services, whereas areas of delivery are selected from a pre-defined list. You can request the list of possible areas from the [`service-areas` endpoint](#service-areas).
+
 
 ```shell
 curl "https://www.aliss.org/api/v3/search/?postcode=G2 4AA"
@@ -94,19 +97,17 @@ curl "https://www.aliss.org/api/v3/search/?postcode=G2 4AA"
 }
 ```
 
-This endpoint searches ALISS services.
-
 ### HTTP Request
 
 `GET https://www.aliss.org/api/v3/search/`
 
-### Query Parameters
+### Query parameters
 
 Parameter | Required | Default | Description
 --------- | -------- | ------- | -----------
 postcode | True | None | The postcode that you wish to find services relevant to
 q | False | None | This is the keywords with which to do a full text search of the services
-category | False | None | The category slug's that you wish to filter the search by
+category | False | None | The category slugs that you wish to filter the search by
 location_type | False | None | The location type of the resource, either 'local' or 'national', default searches everything
 radius | False | 5000 | The radius from the postcode that you wish the search to cover, in meters
 
@@ -121,6 +122,30 @@ You can filter by category by using the category query parameter and passing in 
 `GET https://www.aliss.org/api/v3/search/?location_type=local&postcode=G2 4AA`
 
 You can filter by location type by using the location type query parameter and passing in either 'local' or 'national'.
+
+### Response structure
+
+Key | Description
+--- | ---
+count | number of results returned in all pages of the request
+next | url to next page
+previous | url to previous page
+results | collection of service objects (see below)
+
+**Service object**
+
+Key | Description
+--- | ---
+id | UUID for the service
+organisation | object with details of the organisation that runs the service
+name | name of the service
+description | free text description of the service
+url | url to a site describing the service 
+phone | contact telephone number for the service
+email | contact email address for the service
+categories | collection of category objects associated with the service including a human readable name and slug
+locations | collection of location objects associated with the service
+service_areas | collection of service area objects associated with the service, a full list of possible areas can be requested from the [service areas endpoint](#service-areas)
 
 
 # Categories
