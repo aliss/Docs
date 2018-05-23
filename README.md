@@ -38,6 +38,17 @@ Now that Slate is all set up on your machine, you'll probably want to learn more
 
 If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
 
+### Publishing Your Docs to GitHub Pages
+
+Make sure you're working on a fork in your own account, not our original repo: git remote show origin.
+
+Commit your changes to the markdown source: `git commit -a -m "Update index.md"`
+
+Push the markdown source changes to GitHub: `git push`
+
+Run `./deploy.sh`
+
+
 ### Note on JavaScript Runtime
 
 For those who don't have JavaScript runtime or are experiencing JavaScript runtime issues with ExecJS, it is recommended to add the [rubyracer gem](https://github.com/cowboyd/therubyracer) to your gemfile and run `bundle` again.
