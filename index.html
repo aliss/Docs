@@ -225,7 +225,19 @@
             <a href="#search" class="toc-h1 toc-link" data-title="search">Search</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#overview" class="toc-h2 toc-link" data-title="overview">Overview</a>
+                    <a href="#http-request" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="query-parameters">Query parameters</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-categories" class="toc-h2 toc-link" data-title="filter-by-categories">Filter by categories</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-location-type" class="toc-h2 toc-link" data-title="filter-by-location-type">Filter by location type</a>
+                  </li>
+                  <li>
+                    <a href="#response-structure" class="toc-h2 toc-link" data-title="response-structure">Response structure</a>
                   </li>
               </ul>
           </li>
@@ -237,6 +249,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#service-areas" class="toc-h1 toc-link" data-title="service-areas">Service Areas</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-all-service-areas" class="toc-h2 toc-link" data-title="list-all-service-areas">List all Service Areas</a>
+                  </li>
+              </ul>
+          </li>
       </div>
     </div>
     <div class="page-wrapper">
@@ -245,8 +265,12 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the ALISS API! You can use our API to search for Health and Wellbeing services in Scotland.</p>
 
-<p>ALISS is open source find us at (https://github.com/ALISS).</p>
-<h1 id='search'>Search</h1><h2 id='overview'>Overview</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/search/?postcode=G2 4AA"</span>
+<p>Both these docs and ALISS are open source. If you&#39;d like to improve <a href="https://github.com/aliss/Docs">this documentation</a> or <a href="https://github.com/aliss/ALISS">ALISS itself</a> please add an issue or submit a pull request.</p>
+<h1 id='search'>Search</h1>
+<p>Thes search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.</p>
+
+<p>Services can be delivered at a specific location, or they can be delivered across a whole area or areas. Locations are specific to the organisations that run the services, whereas areas of delivery are selected from a pre-defined list. You can request the list of possible areas from the <a href="#service-areas"><code>service-areas</code> endpoint</a>.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/search/?postcode=G2 4AA"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -319,11 +343,9 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint searches ALISS services.</p>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/search/</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h3 id='query-parameters'>Query parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -348,7 +370,7 @@
 <td>category</td>
 <td>False</td>
 <td>None</td>
-<td>The category slug&#39;s that you wish to filter the search by</td>
+<td>The category slugs that you wish to filter the search by</td>
 </tr>
 <tr>
 <td>location_type</td>
@@ -371,6 +393,80 @@
 <p><code>GET https://www.aliss.org/api/v3/search/?location_type=local&amp;postcode=G2 4AA</code></p>
 
 <p>You can filter by location type by using the location type query parameter and passing in either &#39;local&#39; or &#39;national&#39;.</p>
+<h3 id='response-structure'>Response structure</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>count</td>
+<td>number of results returned in all pages of the request</td>
+</tr>
+<tr>
+<td>next</td>
+<td>url to next page</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>url to previous page</td>
+</tr>
+<tr>
+<td>results</td>
+<td>collection of service objects (see below)</td>
+</tr>
+</tbody></table>
+
+<p><strong>Service object</strong></p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>UUID for the service</td>
+</tr>
+<tr>
+<td>organisation</td>
+<td>object with details of the organisation that runs the service</td>
+</tr>
+<tr>
+<td>name</td>
+<td>name of the service</td>
+</tr>
+<tr>
+<td>description</td>
+<td>free text description of the service</td>
+</tr>
+<tr>
+<td>url</td>
+<td>url to a site describing the service</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>contact telephone number for the service</td>
+</tr>
+<tr>
+<td>email</td>
+<td>contact email address for the service</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>collection of category objects associated with the service including a human readable name and slug</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>collection of location objects associated with the service</td>
+</tr>
+<tr>
+<td>service_areas</td>
+<td>collection of service area objects associated with the service, a full list of possible areas can be requested from the <a href="#service-areas">service areas endpoint</a></td>
+</tr>
+</tbody></table>
 <h1 id='categories'>Categories</h1><h2 id='list-all-categories'>List all Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/categories/"</span>
 </code></pre>
 <blockquote>
@@ -406,6 +502,62 @@
 <p>This endpoint retrieves all categories.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/categories/</code></p>
+<h1 id='service-areas'>Service Areas</h1><h2 id='list-all-service-areas'>List all Service Areas</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/service-areas/"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000025"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scottish Borders"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000026"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shetland Islands"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Ayrshire"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000028"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"South Lanarkshire"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000029"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West Dunbartonshire"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000030"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West Lothian"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000031"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Isles"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scotland"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all service areas.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v3/service-areas/</code></p>
 
       </div>
       <div class="dark-box">
