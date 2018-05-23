@@ -167,3 +167,70 @@ This endpoint retrieves all categories.
 ### HTTP Request
 
 `GET https://www.aliss.org/api/v3/categories/`
+
+
+# Service Areas
+
+## List all Service Areas
+
+```shell
+curl "https://www.aliss.org/api/v3/service-areas/"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "code": "S37000025",
+        "type": "4",
+        "name": "Scottish Borders"
+    },
+    {
+        "code": "S37000026",
+        "type": "4",
+        "name": "Shetland Islands"
+    },
+    {
+        "code": "S37000027",
+        "type": "4",
+        "name": "South Ayrshire"
+    },
+    {
+        "code": "S37000028",
+        "type": "4",
+        "name": "South Lanarkshire"
+    },
+    {
+        "code": "S37000029",
+        "type": "4",
+        "name": "West Dunbartonshire"
+    },
+    {
+        "code": "S37000030",
+        "type": "4",
+        "name": "West Lothian"
+    },
+    {
+        "code": "S37000031",
+        "type": "4",
+        "name": "Western Isles"
+    },
+    {
+        "code": "XB",
+        "type": "0",
+        "name": "United Kingdom"
+    },
+    {
+        "code": "XS",
+        "type": "0",
+        "name": "Scotland"
+    }
+]
+```
+
+This endpoint retrieves all service areas.
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v3/service-areas/`
