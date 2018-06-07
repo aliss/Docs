@@ -13,6 +13,19 @@ Welcome to the ALISS API! You can use our API to search for Health and Wellbeing
 
 Both these docs and ALISS are open source. If you'd like to improve [this documentation](https://github.com/aliss/Docs) or [ALISS itself](https://github.com/aliss/ALISS) please add an issue or submit a pull request.
 
+# Attribution and licensing
+
+Licensing for data provided by ALISS can be found in our [Terms and Conditions document](https://www.aliss.org/terms-and-conditions/#licensing).
+
+ALISS, contains data from a variety of sources, including:
+
+- [Digital boundaries and reference maps](https://www.ons.gov.uk/methodology/geography/licences)
+  - National Statistics data © Crown copyright and database right 2018
+  - OS data © Crown copyright and database right 2018
+- [The Scottish Charity Register](https://www.oscr.org.uk) (Office of the Scottish Charity Register) shared under the [Open Government Licence (v2.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/)
+- [Scottish Postcode Directory](https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract) (National Records of Scotland) shared under the [Open Government Licence (v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+- Contributions by ALISS users
+
 # Search
 
 Thes search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.
