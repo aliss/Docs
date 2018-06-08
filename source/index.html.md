@@ -15,7 +15,7 @@ Both these docs and ALISS are open source. If you'd like to improve [this docume
 
 # Attribution and licensing
 
-Licensing for data provided by ALISS can be found in our [Terms and Conditions document](https://www.aliss.org/terms-and-conditions/#licensing).
+ALISS allows the use of data under a [Creative Commons (CC BY–NC–SA 4.0) licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). For more information see [ALISS Terms and Conditions](https://www.aliss.org/terms-and-conditions/).
 
 ALISS, contains data from a variety of sources, including:
 
