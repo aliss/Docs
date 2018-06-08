@@ -19,9 +19,7 @@ Licensing for data provided by ALISS can be found in our [Terms and Conditions d
 
 ALISS, contains data from a variety of sources, including:
 
-- [Digital boundaries and reference maps](https://www.ons.gov.uk/methodology/geography/licences)
-  - National Statistics data © Crown copyright and database right 2018
-  - OS data © Crown copyright and database right 2018
+- National Statistics data © Crown copyright and database right 2018 [(Open Government Licence v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/)
 - [The Scottish Charity Register](https://www.oscr.org.uk) (Office of the Scottish Charity Register) shared under the [Open Government Licence (v2.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/)
 - [Scottish Postcode Directory](https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract) (National Records of Scotland) shared under the [Open Government Licence (v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 - Contributions by ALISS users
