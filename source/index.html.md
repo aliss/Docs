@@ -22,7 +22,7 @@ ALISS, contains data from a variety of sources, including:
 - National Statistics data © Crown copyright and database right 2018 [(Open Government Licence v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/)
 - [The Scottish Charity Register](https://www.oscr.org.uk) (Office of the Scottish Charity Register) shared under the [Open Government Licence (v2.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/)
 - [Scottish Postcode Directory](https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract) (National Records of Scotland) shared under the [Open Government Licence (v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
-- Contributions by ALISS users
+- Contributions by [ALISS users](https://www.aliss.org/terms-and-conditions/)
 
 # Search
 
