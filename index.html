@@ -225,38 +225,33 @@
             <a href="#attribution-and-licensing" class="toc-h1 toc-link" data-title="attribution-and-licensing">Attribution and licensing</a>
           </li>
           <li>
-            <a href="#search" class="toc-h1 toc-link" data-title="search">Search</a>
+            <a href="#api-version-4" class="toc-h1 toc-link" data-title="api-version-4">API Version 4</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
+                    <a href="#service-search" class="toc-h2 toc-link" data-title="service-search">Service search</a>
                   </li>
                   <li>
-                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="query-parameters">Query parameters</a>
+                    <a href="#categories" class="toc-h2 toc-link" data-title="categories">Categories</a>
                   </li>
                   <li>
-                    <a href="#filter-by-categories" class="toc-h2 toc-link" data-title="filter-by-categories">Filter by categories</a>
+                    <a href="#service-areas" class="toc-h2 toc-link" data-title="service-areas">Service areas</a>
                   </li>
                   <li>
-                    <a href="#filter-by-location-type" class="toc-h2 toc-link" data-title="filter-by-location-type">Filter by location type</a>
-                  </li>
-                  <li>
-                    <a href="#response-structure" class="toc-h2 toc-link" data-title="response-structure">Response structure</a>
+                    <a href="#changes-since-v3" class="toc-h2 toc-link" data-title="changes-since-v3">Changes since v3</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#categories" class="toc-h1 toc-link" data-title="categories">Categories</a>
+            <a href="#api-version-3" class="toc-h1 toc-link" data-title="api-version-3">API Version 3</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#list-all-categories" class="toc-h2 toc-link" data-title="list-all-categories">List all Categories</a>
+                    <a href="#search" class="toc-h2 toc-link" data-title="search">Search</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#service-areas" class="toc-h1 toc-link" data-title="service-areas">Service Areas</a>
-              <ul class="toc-list-h2">
                   <li>
-                    <a href="#list-all-service-areas" class="toc-h2 toc-link" data-title="list-all-service-areas">List all Service Areas</a>
+                    <a href="#categories-2" class="toc-h2 toc-link" data-title="categories">Categories</a>
+                  </li>
+                  <li>
+                    <a href="#service-areas-2" class="toc-h2 toc-link" data-title="service-areas">Service areas</a>
                   </li>
               </ul>
           </li>
@@ -280,8 +275,598 @@
 <li><a href="https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract">Scottish Postcode Directory</a> (National Records of Scotland) shared under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence (v3.0)</a></li>
 <li>Contributions by <a href="https://www.aliss.org/terms-and-conditions/">ALISS users</a></li>
 </ul>
-<h1 id='search'>Search</h1>
-<p>Thes search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.</p>
+<h1 id='api-version-4'>API Version 4</h1><h2 id='service-search'>Service search</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/services/?postcode=G2 4AA"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Statistics data © Crown copyright and database right 2018"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Records of Scotland data licensed under the Open Government Licence v3.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains contributions from ALISS users"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/terms-and-conditions"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"licence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">222</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/api/v4/services/?page=2&amp;postcode=G2+4AA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fed34ae8-cf8b-4d6d-9250-6a7d56809d8d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e5d57d2-2e3d-4538-9c4f-d72770d608a7"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CrossReach"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One-to-one counselling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sometimes we experience difficulties and may or may not know why we feel uneasy, anxious or depressed. Counselling provides the chance to explore feelings and experiences in a safe and confidential environment with someone who is trained to help you.</span><span class="se">\r\n\r\n</span><span class="s2">The counsellor won’t give you advice or tell you what to do. They will give you time, space and their particular skills to help you work toward a more satisfactory life."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.crossreach.org.uk/one-one-counselling"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0141 221 1535"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomallan@crossreach.org.uk"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Counselling"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"counselling"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mental Health Issues"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mental-health"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"619d32db-e780-44ab-8ed2-5180c56fc1c3"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"formatted_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom Allan Centre, 23 Elmbank Street, Glasgow, G2 4PB"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom Allan Centre"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23 Elmbank Street"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glasgow"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G2 4PB"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">55.8639028</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-4.2685076</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000046"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glasgow City"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/fed34ae8-cf8b-4d6d-9250-6a7d56809d8d/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-24T09:57:56.111368+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a6750941-8b45-4259-9835-ada48c34d9b3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5e9fa9e-774e-49a8-af12-627466225b9e"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StepChange Debt Charity"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/f5e9fa9e-774e-49a8-af12-627466225b9e/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debt Advice"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Provides free, impartial, confidential advice tailored to your situation. We also provide a range of managed debt solutions plus support you need to help you deal with your debts."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.stepchange.org/Howwecanhelpyou/Debtadvice.aspx"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0800 138 1111"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money Advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"money-advice"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XS"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scotland"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/a6750941-8b45-4259-9835-ada48c34d9b3/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-26T15:55:34.778144+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17074c19-1f0d-47b9-a798-361b10bad50f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17e6fe98-ea05-440f-84a9-45e81f93e4ef"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scottish Families Affected by Alcohol and Drugs (SFAD)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/17e6fe98-ea05-440f-84a9-45e81f93e4ef/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bereavement Support Service"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Have you lost a loved one due where drugs were implicated in the cause of their death in the last 5 years?  Would you like someone to talk to?</span><span class="se">\r\n\r\n</span><span class="s2">Scottish Families offers a FREE and confidential support service to provide you with listening and emotional support in the immediate period after the loss of your loved one and, if appropriate, we can arrange up to 6 face to face counselling sessions for you.  We can also give you information about local peer support groups to meet together with people who have experienced a similar loss.</span><span class="se">\r\n\r\n</span><span class="s2">You will receive your initial telephone appointment from our Bereavement Co-ordinator within 5 working days of making contact with the Helpline."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.sfad.org.uk/get-help-now/bereavement-support-service"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08080 101011"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"helpline@sfad.org.uk"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug Addiction"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drug-addiction"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bereavement"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bereavement"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XS"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scotland"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/17074c19-1f0d-47b9-a798-361b10bad50f/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-11T13:15:18.344698+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f6f28039-1d8e-4041-8d6b-9b4f0acdc42e"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4def5506-6b9e-4de0-aab0-4f31bf68884d"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quaker Social Action"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/4def5506-6b9e-4de0-aab0-4f31bf68884d/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Down to Earth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"With funeral costs high and rising, many people faced with a sudden loss struggle to find an affordable send off for their loved ones. Our unique service aims to ensure no one faces unnecessary debt or distress due to high funeral costs.</span><span class="se">\r\n\r\n</span><span class="s2">Down to Earth supports you to identify and arrange an affordable and meaningful funeral. We can do this face to face, over the phone or by email. Our experienced team support thousands of people across the UK to look at their options, keep costs affordable, and identify ways to raise money for a funeral."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.quakersocialaction.org.uk/we-can-help/helping-bereavement/down-earth/how-it-works"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020 8983 5055"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"downtoearth@qsa.org.uk"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"money"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Burial &amp; Funeral Help"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"burial-funeral-help"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XB"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/f6f28039-1d8e-4041-8d6b-9b4f0acdc42e/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-11T13:25:16.249587+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501d6827-c460-4361-a68d-902ff6656856"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15ac4a10-2635-4992-ad26-3b554d27ffbb"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abused Men in Scotland"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/15ac4a10-2635-4992-ad26-3b554d27ffbb/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domestic Violence Helpline"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Our Domestic violence helpline for men is open every weekday 9:00 am to 4:00 pm. whether you want to take the first steps to leaving an abusive relationship or just want to someone to talk too, give us a call today on:"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.amis.org.uk/help-for-men.html"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0808 800 0024"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mental Health Issues"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mental-health"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mens Health"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mens-health"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sexual Violence"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sexual-violence"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XS"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scotland"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/501d6827-c460-4361-a68d-902ff6656856/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-09T15:45:15.473794+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8e3e6ee9-359a-472d-b573-4e0a75fe2145"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b202cac-03c4-4246-94be-66dda9994700"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In Care Survivors Service Scotland (ICSSS)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/7b202cac-03c4-4246-94be-66dda9994700/"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Helpline"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A national confidential telephone Helpline with a team of specially trained counsellors offering help specifically for survivors of historic in-care abuse.</span><span class="se">\r\n\r\n</span><span class="s2">This helpline is currently available from 9am to 11am Monday to Friday and is for those of you who have not yet been allocated a worker or to make a new referral."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.incaresurvivors.org.uk/index.php?option=com_content&amp;view=article&amp;id=91&amp;Itemid=127"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0800 121 6027"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Counselling"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"counselling"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mental Health Issues"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mental-health"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XS"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scotland"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/8e3e6ee9-359a-472d-b573-4e0a75fe2145/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-18T11:09:03.373490+00:00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The service search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.</p>
+
+<p>Services can be delivered at a specific location, or they can be delivered across a whole area or areas. Locations are specific to the organisations that run the services, whereas areas of delivery are selected from a pre-defined list. You can request the list of possible areas from the <a href="#service-areas"><code>service-areas</code> endpoint</a>.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v4/services/</code></p>
+
+<p>You can request an HTML formatted version of the result with your browser: <a href="https://www.aliss.org/api/v4/services/?postcode=G2%204AA">https://www.aliss.org/api/v4/services/?postcode=G2 4AA</a></p>
+<h3 id='query-parameters'>Query parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>postcode</td>
+<td>True</td>
+<td>None</td>
+<td>The postcode that you wish to find services relevant to</td>
+</tr>
+<tr>
+<td>q</td>
+<td>False</td>
+<td>None</td>
+<td>This is the keywords with which to do a full text search of the services</td>
+</tr>
+<tr>
+<td>category</td>
+<td>False</td>
+<td>None</td>
+<td>The category slugs that you wish to filter the search by</td>
+</tr>
+<tr>
+<td>location_type</td>
+<td>False</td>
+<td>None</td>
+<td>The location type of the resource, either &#39;local&#39; or &#39;national&#39;, default searches everything</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>False</td>
+<td>5000</td>
+<td>The radius from the postcode that you wish the search to cover, in meters</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>False</td>
+<td>10</td>
+<td>The number of results in a page (max. 100)</td>
+</tr>
+</tbody></table>
+<h3 id='filter-by-categories'>Filter by categories</h3>
+<p><code>GET https://www.aliss.org/api/v4/services/?category=money-advice&amp;postcode=G2 4AA</code></p>
+
+<p>You can filter by category by using the category query parameter and passing in a category slug.</p>
+<h3 id='filter-by-location-type'>Filter by location type</h3>
+<p><code>GET https://www.aliss.org/api/v4/services/?location_type=local&amp;postcode=G2 4AA</code></p>
+
+<p>You can filter by location type by using the location type query parameter and passing in either &#39;local&#39; or &#39;national&#39;.</p>
+<h3 id='response-structure'>Response structure</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>meta</td>
+<td>metadata associated with the result</td>
+</tr>
+<tr>
+<td>count</td>
+<td>number of results returned in all pages of the request</td>
+</tr>
+<tr>
+<td>next</td>
+<td>url to next page</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>url to previous page</td>
+</tr>
+<tr>
+<td>results</td>
+<td>collection of service objects (see below)</td>
+</tr>
+</tbody></table>
+
+<p><strong>Service object</strong></p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>UUID for the service</td>
+</tr>
+<tr>
+<td>name</td>
+<td>name of the service</td>
+</tr>
+<tr>
+<td>organisation.id</td>
+<td>object with details of the organisation that runs the service</td>
+</tr>
+<tr>
+<td>organisation.name</td>
+<td>name of the organisation</td>
+</tr>
+<tr>
+<td>organisation.aliss_url</td>
+<td>url to the organisation entry on aliss.org</td>
+</tr>
+<tr>
+<td>organisation.is_claimed</td>
+<td>whether a representative of the organisation has claimed editorial privelege over the entry</td>
+</tr>
+<tr>
+<td>description</td>
+<td>free text description of the service</td>
+</tr>
+<tr>
+<td>url</td>
+<td>url to a site describing the service</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>contact telephone number for the service</td>
+</tr>
+<tr>
+<td>email</td>
+<td>contact email address for the service</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>collection of category objects associated with the service including a human readable name and slug</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>collection of location objects associated with the service</td>
+</tr>
+<tr>
+<td>service_areas</td>
+<td>collection of service area objects associated with the service, a full list of possible areas can be requested from the <a href="#service-areas">service areas endpoint</a></td>
+</tr>
+<tr>
+<td>aliss_url</td>
+<td>url to the service entry on aliss.org</td>
+</tr>
+<tr>
+<td>last_updated</td>
+<td>timestamp (<a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a>) of when the service entry was last edited</td>
+</tr>
+</tbody></table>
+<h2 id='categories'>Categories</h2><h3 id='list-all-categories'>List all Categories</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/categories/"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"licence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Housing and Homelessness"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"housing-and-homelessness"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Housing"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-housing"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sheltered Housing"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sheltered-housing"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Housing Advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"housing-advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Housing Support"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"housing-support"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Housing Adaptations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"housing-adaptations"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food &amp; Nutrition"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food-nutrition"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Community Garden"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community-garden"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food Delivery"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food-delivery"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Foodbank"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foodbank"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free Meals"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"free-meals"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Community Cafe"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"community-cafe"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"money"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money Advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"money-advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy Advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"energy-advice"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all categories. </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v4/categories/</code></p>
+
+<p>You can view an HTML formatted version of the result with your browser: <a href="https://www.aliss.org/api/v4/categories/">https://www.aliss.org/api/v4/categories/</a></p>
+<h2 id='service-areas'>Service areas</h2><h3 id='list-all-service-areas'>List all Service areas</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/service-areas/"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Statistics data © Crown copyright and database right 2018"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"licence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000005"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clackmannanshire"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000006"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dumfries and Galloway"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000008"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"East Ayrshire"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000010"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"East Lothian"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000011"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"East Renfrewshire"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000013"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Na h-Eileanan Siar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000014"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Falkirk"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S12000015"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Local Authority"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fife"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all service areas. An HTML formatted version of the result is available here: http://www.aliss.org/api/v4/service-areas/</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v4/service-areas/</code></p>
+
+<p>You can view an HTML formatted version of the result with your browser: <a href="https://www.aliss.org/api/v4/service-areas/">https://www.aliss.org/api/v4/service-areas/</a></p>
+<h2 id='changes-since-v3'>Changes since v3</h2>
+<p>The main difference between v4 and v3 is the structure of the JSON that is returned. All endpoints return an object rather than collections. This change facilitated the addition of metadata and other fields to the responses. The categories endpoint returns a significantly different result, as the response objects are structured to reflect the hierarchy of parent and sub-categories, rather than being flattened.</p>
+
+<p>Other notable changes:</p>
+
+<ul>
+<li>Service endpoint has taken a more RESTful style (<code>/services</code> rather than <code>/search</code>)</li>
+<li>Service objects include a <code>last_updated</code> field</li>
+<li>Service and organisation objects include <code>aliss_url</code> fields</li>
+<li>Service organisation object includes a <code>is_claimed</code> field</li>
+<li>Service area <code>type</code> field shows a human friendly boundary name</li>
+</ul>
+<h1 id='api-version-3'>API Version 3</h1><h2 id='search'>Search</h2>
+<p>Thes service search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.</p>
 
 <p>Services can be delivered at a specific location, or they can be delivered across a whole area or areas. Locations are specific to the organisations that run the services, whereas areas of delivery are selected from a pre-defined list. You can request the list of possible areas from the <a href="#service-areas"><code>service-areas</code> endpoint</a>.</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/search/?postcode=G2 4AA"</span>
@@ -357,9 +942,9 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/search/</code></p>
-<h3 id='query-parameters'>Query parameters</h3>
+<h3 id='query-parameters-2'>Query parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -399,15 +984,15 @@
 <td>The radius from the postcode that you wish the search to cover, in meters</td>
 </tr>
 </tbody></table>
-<h3 id='filter-by-categories'>Filter by categories</h3>
+<h3 id='filter-by-categories-2'>Filter by categories</h3>
 <p><code>GET https://www.aliss.org/api/v3/search/?category=money-advice&amp;postcode=G2 4AA</code></p>
 
 <p>You can filter by category by using the category query parameter and passing in a category slug.</p>
-<h3 id='filter-by-location-type'>Filter by location type</h3>
+<h3 id='filter-by-location-type-2'>Filter by location type</h3>
 <p><code>GET https://www.aliss.org/api/v3/search/?location_type=local&amp;postcode=G2 4AA</code></p>
 
 <p>You can filter by location type by using the location type query parameter and passing in either &#39;local&#39; or &#39;national&#39;.</p>
-<h3 id='response-structure'>Response structure</h3>
+<h3 id='response-structure-2'>Response structure</h3>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -481,7 +1066,7 @@
 <td>collection of service area objects associated with the service, a full list of possible areas can be requested from the <a href="#service-areas">service areas endpoint</a></td>
 </tr>
 </tbody></table>
-<h1 id='categories'>Categories</h1><h2 id='list-all-categories'>List all Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/categories/"</span>
+<h2 id='categories-2'>Categories</h2><h3 id='list-all-categories-2'>List all Categories</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/categories/"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -514,9 +1099,9 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all categories.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/categories/</code></p>
-<h1 id='service-areas'>Service Areas</h1><h2 id='list-all-service-areas'>List all Service Areas</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/service-areas/"</span>
+<h2 id='service-areas-2'>Service areas</h2><h3 id='list-all-service-areas-2'>List all service areas</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/service-areas/"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -570,7 +1155,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all service areas.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/service-areas/</code></p>
 
       </div>
