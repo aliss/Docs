@@ -305,6 +305,7 @@ q | False | None | This is the keywords with which to do a full text search of t
 category | False | None | The category slugs that you wish to filter the search by
 location_type | False | None | The location type of the resource, either 'local' or 'national', default searches everything
 radius | False | 5000 | The radius from the postcode that you wish the search to cover, in meters
+page_size | False | 10 | The number of results in a page (max. 100)
 
 ### Filter by categories
 
