@@ -15,7 +15,7 @@ Both these docs and ALISS are open source. If you'd like to improve [this docume
 
 # Attribution and licensing
 
-ALISS allows the use of data under a [Creative Commons (CC BY–NC–SA 4.0) licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). For more information see [ALISS Terms and Conditions](https://www.aliss.org/terms-and-conditions/).
+ALISS allows the use of data under a [Creative Commons (CC BY 4.0) licence](https://creativecommons.org/licenses/by/4.0/). For more information see [ALISS Terms and Conditions](https://www.aliss.org/terms-and-conditions/).
 
 ALISS, contains data from a variety of sources, including:
 
@@ -57,7 +57,7 @@ curl "https://www.aliss.org/api/v4/services/?postcode=G2 4AA"
                 "url": "https://www.aliss.org/terms-and-conditions"
             }
         ],
-        "licence": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
     },
     "count": 222,
     "next": "https://www.aliss.org/api/v4/services/?page=2&postcode=G2+4AA",
@@ -364,7 +364,7 @@ curl "https://www.aliss.org/api/v4/categories/"
 {
     "meta": {
         "attribution": [],
-        "licence": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
     },
     "data": [
         {
@@ -481,7 +481,7 @@ curl "https://www.aliss.org/api/v4/service-areas/"
                 "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
             }
         ],
-        "licence": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
     },
     "data": [
         {
