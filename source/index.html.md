@@ -13,7 +13,7 @@ Welcome to the ALISS API! You can use our API to search for health and wellbeing
 
 Both these docs and ALISS are open source. If you'd like to improve [this documentation](https://github.com/aliss/Docs) or [ALISS itself](https://github.com/aliss/ALISS) please add an issue or submit a pull request.
 
-## aliss.js
+### aliss.js
 
 A beta version of `aliss.js`, our javascript plugin is now [available for download](https://github.com/aliss/aliss.js/). The plugin makes use of the API to embed ALISS search functionality.
 
@@ -44,6 +44,7 @@ curl "https://www.aliss.org/api/v4/services/?postcode=G2 4AA"
 
 {
     "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
         "attribution": [
             {
                 "text": "Contains National Statistics data © Crown copyright and database right 2018",
@@ -61,34 +62,130 @@ curl "https://www.aliss.org/api/v4/services/?postcode=G2 4AA"
                 "text": "Contains contributions from ALISS users",
                 "url": "https://www.aliss.org/terms-and-conditions"
             }
-        ],
-        "licence": "https://creativecommons.org/licenses/by/4.0/"
+        ]
     },
-    "count": 222,
+    "count": 534,
     "next": "https://www.aliss.org/api/v4/services/?page=2&postcode=G2+4AA",
     "previous": null,
     "data": [
+        {
+            "id": "3da126c1-44b4-4095-a1d1-db21787d0b6a",
+            "organisation": {
+                "id": "abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "name": "Loaves and Fishes",
+                "aliss_url": "https://www.aliss.org/organisations/loaves-and-fishes-0/",
+                "permalink": "https://www.aliss.org/organisations/abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "is_claimed": false,
+                "slug": "loaves-and-fishes-0"
+            },
+            "name": "Food Parcels",
+            "description": "Every Thursday night we distribute food parcels to the people who come to our meal. We also distribute the food parcels directly to the people in need that we hear about through our various contacts. We distribute food parcels through social work departments who rely on us to support the people they help.",
+            "slug": "food-parcels-1",
+            "url": "http://www.loavesandfishes.org.uk/contact.htm",
+            "phone": "01355 224 375",
+            "email": "enquiries@loavesandfishes.org.uk",
+            "categories": [
+                {
+                    "name": "Food & Nutrition",
+                    "slug": "food-nutrition"
+                },
+                {
+                    "name": "Foodbank",
+                    "slug": "foodbank"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "c8b7db71-f879-47f9-b4e0-ce593d839628",
+                    "formatted_address": "Renfield St Stephens Centre, 260 Bath Street, Glasgow, G2 4JP",
+                    "name": "Renfield St Stephens Centre",
+                    "description": "",
+                    "street_address": "260 Bath Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4JP",
+                    "country": "GB",
+                    "latitude": 55.8652885,
+                    "longitude": -4.2672764
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/food-parcels-1/",
+            "permalink": "https://www.aliss.org/services/3da126c1-44b4-4095-a1d1-db21787d0b6a",
+            "last_updated": "2018-09-17T16:22:50.910751+00:00"
+        },
+        {
+            "id": "68c6347c-e069-4c7e-b762-a41126280faf",
+            "organisation": {
+                "id": "abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "name": "Loaves and Fishes",
+                "aliss_url": "https://www.aliss.org/organisations/loaves-and-fishes-0/",
+                "permalink": "https://www.aliss.org/organisations/abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "is_claimed": false,
+                "slug": "loaves-and-fishes-0"
+            },
+            "name": "Providing Meals",
+            "description": "Each Monday and Thursday evening we provide a sit down, hot meal for around 40 men and women at the Oasis café in Renfield St Stephen’s Church Centre. It may be the only proper meal some of them get. We’ve been providing a sit down meals service for almost ten years and we truly believe that this is a far more beneficial service as it provides a safe, relaxing environment to enjoy the food and the company of others.",
+            "slug": "providing-meals-0",
+            "url": "http://www.loavesandfishes.org.uk/providing-meals.htm",
+            "phone": "01355 224 375",
+            "email": "enquiries@loavesandfishes.org.uk",
+            "categories": [
+                {
+                    "name": "Food & Nutrition",
+                    "slug": "food-nutrition"
+                },
+                {
+                    "name": "Free Meals",
+                    "slug": "free-meals"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "c8b7db71-f879-47f9-b4e0-ce593d839628",
+                    "formatted_address": "Renfield St Stephens Centre, 260 Bath Street, Glasgow, G2 4JP",
+                    "name": "Renfield St Stephens Centre",
+                    "description": "",
+                    "street_address": "260 Bath Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4JP",
+                    "country": "GB",
+                    "latitude": 55.8652885,
+                    "longitude": -4.2672764
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/providing-meals-0/",
+            "permalink": "https://www.aliss.org/services/68c6347c-e069-4c7e-b762-a41126280faf",
+            "last_updated": "2018-09-17T16:22:50.582230+00:00"
+        },
         {
             "id": "fed34ae8-cf8b-4d6d-9250-6a7d56809d8d",
             "organisation": {
                 "id": "0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
                 "name": "CrossReach",
-                "aliss_url": "https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7/",
-                "is_claimed": false
+                "aliss_url": "https://www.aliss.org/organisations/crossreach-0/",
+                "permalink": "https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "is_claimed": false,
+                "slug": "crossreach-0"
             },
             "name": "One-to-one counselling",
             "description": "Sometimes we experience difficulties and may or may not know why we feel uneasy, anxious or depressed. Counselling provides the chance to explore feelings and experiences in a safe and confidential environment with someone who is trained to help you.\r\n\r\nThe counsellor won’t give you advice or tell you what to do. They will give you time, space and their particular skills to help you work toward a more satisfactory life.",
+            "slug": "one-to-one-counselling-2",
             "url": "http://www.crossreach.org.uk/one-one-counselling",
             "phone": "0141 221 1535",
             "email": "tomallan@crossreach.org.uk",
             "categories": [
                 {
-                    "name": "Counselling",
-                    "slug": "counselling"
-                },
-                {
                     "name": "Mental Health Issues",
                     "slug": "mental-health"
+                },
+                {
+                    "name": "Counselling",
+                    "slug": "counselling"
                 }
             ],
             "locations": [
@@ -114,178 +211,60 @@ curl "https://www.aliss.org/api/v4/services/?postcode=G2 4AA"
                     "name": "Glasgow City"
                 }
             ],
-            "aliss_url": "https://www.aliss.org/services/fed34ae8-cf8b-4d6d-9250-6a7d56809d8d/",
-            "last_updated": "2018-01-24T09:57:56.111368+00:00"
+            "aliss_url": "https://www.aliss.org/services/one-to-one-counselling-2/",
+            "permalink": "https://www.aliss.org/services/fed34ae8-cf8b-4d6d-9250-6a7d56809d8d",
+            "last_updated": "2018-09-17T16:22:47.106955+00:00"
         },
         {
-            "id": "a6750941-8b45-4259-9835-ada48c34d9b3",
+            "id": "1615ffd3-2fa4-4b5f-90bc-3586cb99a552",
             "organisation": {
-                "id": "f5e9fa9e-774e-49a8-af12-627466225b9e",
-                "name": "StepChange Debt Charity",
-                "aliss_url": "https://www.aliss.org/organisations/f5e9fa9e-774e-49a8-af12-627466225b9e/",
-                "is_claimed": false
+                "id": "0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "name": "CrossReach",
+                "aliss_url": "https://www.aliss.org/organisations/crossreach-0/",
+                "permalink": "https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "is_claimed": false,
+                "slug": "crossreach-0"
             },
-            "name": "Debt Advice",
-            "description": "Provides free, impartial, confidential advice tailored to your situation. We also provide a range of managed debt solutions plus support you need to help you deal with your debts.",
-            "url": "https://www.stepchange.org/Howwecanhelpyou/Debtadvice.aspx",
-            "phone": "0800 138 1111",
-            "email": "",
-            "categories": [
-                {
-                    "name": "Money Advice",
-                    "slug": "money-advice"
-                }
-            ],
-            "locations": [],
-            "service_areas": [
-                {
-                    "code": "XS",
-                    "type": "Country",
-                    "name": "Scotland"
-                }
-            ],
-            "aliss_url": "https://www.aliss.org/services/a6750941-8b45-4259-9835-ada48c34d9b3/",
-            "last_updated": "2018-01-26T15:55:34.778144+00:00"
-        },
-        {
-            "id": "17074c19-1f0d-47b9-a798-361b10bad50f",
-            "organisation": {
-                "id": "17e6fe98-ea05-440f-84a9-45e81f93e4ef",
-                "name": "Scottish Families Affected by Alcohol and Drugs (SFAD)",
-                "aliss_url": "https://www.aliss.org/organisations/17e6fe98-ea05-440f-84a9-45e81f93e4ef/",
-                "is_claimed": false
-            },
-            "name": "Bereavement Support Service",
-            "description": "Have you lost a loved one due where drugs were implicated in the cause of their death in the last 5 years?  Would you like someone to talk to?\r\n\r\nScottish Families offers a FREE and confidential support service to provide you with listening and emotional support in the immediate period after the loss of your loved one and, if appropriate, we can arrange up to 6 face to face counselling sessions for you.  We can also give you information about local peer support groups to meet together with people who have experienced a similar loss.\r\n\r\nYou will receive your initial telephone appointment from our Bereavement Co-ordinator within 5 working days of making contact with the Helpline.",
-            "url": "http://www.sfad.org.uk/get-help-now/bereavement-support-service",
-            "phone": "08080 101011",
-            "email": "helpline@sfad.org.uk",
-            "categories": [
-                {
-                    "name": "Drug Addiction",
-                    "slug": "drug-addiction"
-                },
-                {
-                    "name": "Bereavement",
-                    "slug": "bereavement"
-                }
-            ],
-            "locations": [],
-            "service_areas": [
-                {
-                    "code": "XS",
-                    "type": "Country",
-                    "name": "Scotland"
-                }
-            ],
-            "aliss_url": "https://www.aliss.org/services/17074c19-1f0d-47b9-a798-361b10bad50f/",
-            "last_updated": "2018-01-11T13:15:18.344698+00:00"
-        },
-        {
-            "id": "f6f28039-1d8e-4041-8d6b-9b4f0acdc42e",
-            "organisation": {
-                "id": "4def5506-6b9e-4de0-aab0-4f31bf68884d",
-                "name": "Quaker Social Action",
-                "aliss_url": "https://www.aliss.org/organisations/4def5506-6b9e-4de0-aab0-4f31bf68884d/",
-                "is_claimed": false
-            },
-            "name": "Down to Earth",
-            "description": "With funeral costs high and rising, many people faced with a sudden loss struggle to find an affordable send off for their loved ones. Our unique service aims to ensure no one faces unnecessary debt or distress due to high funeral costs.\r\n\r\nDown to Earth supports you to identify and arrange an affordable and meaningful funeral. We can do this face to face, over the phone or by email. Our experienced team support thousands of people across the UK to look at their options, keep costs affordable, and identify ways to raise money for a funeral.",
-            "url": "https://www.quakersocialaction.org.uk/we-can-help/helping-bereavement/down-earth/how-it-works",
-            "phone": "020 8983 5055",
-            "email": "downtoearth@qsa.org.uk",
-            "categories": [
-                {
-                    "name": "Money",
-                    "slug": "money"
-                },
-                {
-                    "name": "Burial & Funeral Help",
-                    "slug": "burial-funeral-help"
-                }
-            ],
-            "locations": [],
-            "service_areas": [
-                {
-                    "code": "XB",
-                    "type": "Country",
-                    "name": "United Kingdom"
-                }
-            ],
-            "aliss_url": "https://www.aliss.org/services/f6f28039-1d8e-4041-8d6b-9b4f0acdc42e/",
-            "last_updated": "2018-01-11T13:25:16.249587+00:00"
-        },
-        {
-            "id": "501d6827-c460-4361-a68d-902ff6656856",
-            "organisation": {
-                "id": "15ac4a10-2635-4992-ad26-3b554d27ffbb",
-                "name": "Abused Men in Scotland",
-                "aliss_url": "https://www.aliss.org/organisations/15ac4a10-2635-4992-ad26-3b554d27ffbb/",
-                "is_claimed": false
-            },
-            "name": "Domestic Violence Helpline",
-            "description": "Our Domestic violence helpline for men is open every weekday 9:00 am to 4:00 pm. whether you want to take the first steps to leaving an abusive relationship or just want to someone to talk too, give us a call today on:",
-            "url": "http://www.amis.org.uk/help-for-men.html",
-            "phone": "0808 800 0024",
-            "email": "",
-            "categories": [
-                {
-                    "name": "Mental Health Issues",
-                    "slug": "mental-health"
-                },
-                {
-                    "name": "Mens Health",
-                    "slug": "mens-health"
-                },
-                {
-                    "name": "Sexual Violence",
-                    "slug": "sexual-violence"
-                }
-            ],
-            "locations": [],
-            "service_areas": [
-                {
-                    "code": "XS",
-                    "type": "Country",
-                    "name": "Scotland"
-                }
-            ],
-            "aliss_url": "https://www.aliss.org/services/501d6827-c460-4361-a68d-902ff6656856/",
-            "last_updated": "2018-01-09T15:45:15.473794+00:00"
-        },
-        {
-            "id": "8e3e6ee9-359a-472d-b573-4e0a75fe2145",
-            "organisation": {
-                "id": "7b202cac-03c4-4246-94be-66dda9994700",
-                "name": "In Care Survivors Service Scotland (ICSSS)",
-                "aliss_url": "https://www.aliss.org/organisations/7b202cac-03c4-4246-94be-66dda9994700/",
-                "is_claimed": false
-            },
-            "name": "Helpline",
-            "description": "A national confidential telephone Helpline with a team of specially trained counsellors offering help specifically for survivors of historic in-care abuse.\r\n\r\nThis helpline is currently available from 9am to 11am Monday to Friday and is for those of you who have not yet been allocated a worker or to make a new referral.",
-            "url": "http://www.incaresurvivors.org.uk/index.php?option=com_content&view=article&id=91&Itemid=127",
-            "phone": "0800 121 6027",
-            "email": "",
+            "name": "Bluebell-PND- Counselling Service",
+            "description": "Bluebell Perinatal Depression Counselling Service is a specialist Postnatal Depression Service for depression which begins in pregnancy or shortly after birth.",
+            "slug": "bluebell-pnd-counselling-service-0",
+            "url": "https://www.crossreach.org.uk/our-locations/crossreach-bluebell-perinatal-service",
+            "phone": "0141 221 3003",
+            "email": "bluebell@crossreach.org.uk",
             "categories": [
                 {
                     "name": "Counselling",
                     "slug": "counselling"
                 },
                 {
-                    "name": "Mental Health Issues",
-                    "slug": "mental-health"
-                }
-            ],
-            "locations": [],
-            "service_areas": [
+                    "name": "Depression",
+                    "slug": "depression"
+                },
                 {
-                    "code": "XS",
-                    "type": "Country",
-                    "name": "Scotland"
+                    "name": "Parent & Family Support",
+                    "slug": "parent-family-support"
                 }
             ],
-            "aliss_url": "https://www.aliss.org/services/8e3e6ee9-359a-472d-b573-4e0a75fe2145/",
-            "last_updated": "2018-01-18T11:09:03.373490+00:00"
+            "locations": [
+                {
+                    "id": "619d32db-e780-44ab-8ed2-5180c56fc1c3",
+                    "formatted_address": "Tom Allan Centre, 23 Elmbank Street, Glasgow, G2 4PB",
+                    "name": "Tom Allan Centre",
+                    "description": "",
+                    "street_address": "23 Elmbank Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4PB",
+                    "country": "GB",
+                    "latitude": 55.8639028,
+                    "longitude": -4.2685076
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/bluebell-pnd-counselling-service-0/",
+            "permalink": "https://www.aliss.org/services/1615ffd3-2fa4-4b5f-90bc-3586cb99a552",
+            "last_updated": "2018-10-25T08:27:31.354698+00:00"
         }
     ]
 }
@@ -342,7 +321,8 @@ id | UUID for the service
 name | name of the service
 organisation.id | object with details of the organisation that runs the service
 organisation.name | name of the organisation
-organisation.aliss_url | url to the organisation entry on aliss.org
+organisation.permalink | url to the organisation entry on aliss.org
+organisation.aliss_url | human friendly url to the organisation entry on aliss.org
 organisation.is_claimed | whether a representative of the organisation has claimed editorial privelege over the entry
 description | free text description of the service
 url | url to a site describing the service 
@@ -351,7 +331,8 @@ email | contact email address for the service
 categories | collection of category objects associated with the service including a human readable name and slug
 locations | collection of location objects associated with the service
 service_areas | collection of service area objects associated with the service, a full list of possible areas can be requested from the [service areas endpoint](#service-areas)
-aliss_url | url to the service entry on aliss.org
+permalink | url to the service entry on aliss.org
+aliss_url | human friendly url to the service entry on aliss.org
 last_updated | timestamp ([ISO 8601](https://www.w3.org/TR/NOTE-datetime)) of when the service entry was last edited
 
 
