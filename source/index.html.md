@@ -9,7 +9,7 @@ search: true
 
 # Introduction
 
-Welcome to the ALISS API! You can use our API to search for health and wellbeing services in Scotland.
+Welcome to the ALISS API docs! You can use our API to search for health and wellbeing services in Scotland.
 
 Both these docs and ALISS are open source. If you'd like to improve [this documentation](https://github.com/aliss/Docs) or [ALISS itself](https://github.com/aliss/ALISS) please add an issue or submit a pull request.
 
@@ -311,9 +311,9 @@ meta | metadata associated with the result
 count | number of results returned in all pages of the request
 next | url to next page
 previous | url to previous page
-results | collection of service objects (see below)
+data | collection of service objects (see below)
 
-**Service object**
+#### Service object
 
 Key | Description
 --- | ---
@@ -334,6 +334,216 @@ service_areas | collection of service area objects associated with the service, 
 permalink | url to the service entry on aliss.org
 aliss_url | human friendly url to the service entry on aliss.org
 last_updated | timestamp ([ISO 8601](https://www.w3.org/TR/NOTE-datetime)) of when the service entry was last edited
+
+
+## Service
+
+### Retrieve a single service
+
+
+```shell
+curl "https://www.aliss.org/api/v4/services/<service_id_or_slug>"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
+    },
+    "data": {
+        "id": "4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "name": "Leitholm Soup Social",
+        "description": "Leitholm Soup Social offers a healthy soup and sandwich, companionship and endless cups of teas/coffees. Pay as much as you feel!\r\nEvery Thursday from 12-2pm. (From the first week of October to the last week of April)",
+        "url": "",
+        "phone": "01835825080",
+        "email": "communitycapacity@scotborders.gov.uk",
+        "categories": [
+            {
+                "name": "Social Group",
+                "slug": "social-group"
+            },
+            {
+                "name": "Lunch Club",
+                "slug": "lunch-club"
+            }
+        ],
+        "service_areas": [],
+        "organisation": {
+            "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
+            "name": "SBC Community Capacity Building",
+            "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
+            "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
+            "is_claimed": false,
+            "slug": "sbc-community-capacity-building-0"
+        },
+        "slug": "leitholm-soup-social-1",
+        "aliss_url": "https://www.aliss.org/services/leitholm-soup-social-1/",
+        "permalink": "https://www.aliss.org/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "last_updated": "2018-12-20T14:45:51.344207Z"
+    }
+}
+```
+
+This endpoint retrieves a single service resource. 
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/services/<service_id_or_slug>`
+
+You can view an HTML formatted version of the result if you view the endpoint in your browser eg: [https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91](https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91)
+
+### Response structure
+
+See [`service object`](#service-object).
+
+
+## Organisation
+
+### Retrieve a single organisation
+
+```shell
+curl "https://www.aliss.org/api/v4/organisations/<organisation_id_or_slug>"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
+    },
+    "data": {
+        "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
+        "name": "SBC Community Capacity Building",
+        "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
+        "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
+        "is_claimed": false,
+        "slug": "sbc-community-capacity-building-0",
+        "description": "The aim of the Community Capacity Building team is to actively\r\nfoster and encourage the development of resilience within\r\ncommunities to allow them to become stronger and more\r\nself-reliant through offering the right support at the right time",
+        "facebook": "https://www.facebook.com/SBC-Community-Capacity-Building-379248189076883/",
+        "twitter": "",
+        "url": "",
+        "phone": "01835825080",
+        "email": "communitycapacity@scotborders.gov.uk",
+        "last_edited": "2018-11-23T09:28:38.946621Z",
+        "services": [
+            {
+                "id": "9fd62ed3-b6a3-46dd-8712-8727f7ff9012",
+                "name": "Community Capacity Building Link Worker Service",
+                "description": "The CCB Link Worker Service offers one to one enablement support for older people or adults with long-term conditions - this service is available in Berwickshire.",
+                "url": "",
+                "phone": "07917 277 139",
+                "email": "juliana.amaral@scotborder.gov.uk",
+                "categories": [
+                    {
+                        "name": "Food & Nutrition",
+                        "slug": "food-nutrition"
+                    },
+                    {
+                        "name": "Conditions",
+                        "slug": "conditions"
+                    },
+                    {
+                        "name": "Health & Social Care Services",
+                        "slug": "health-social-care-services"
+                    },
+                    {
+                        "name": "Activity",
+                        "slug": "activity"
+                    }
+                ],
+                "service_areas": [
+                    {
+                        "code": "S37000025",
+                        "type": "4",
+                        "name": "Scottish Borders"
+                    }
+                ]
+            },
+            {
+                "id": "46237477-2831-4d8a-a78b-0069efbbb316",
+                "name": "Writing for Wellbeing",
+                "description": "A great way to use writing for self-expression in a creative way. The group meets every first Monday of the month from 2-4:30pm,  £2 per person which includes tea/coffee and biscuits.",
+                "url": "",
+                "phone": "",
+                "email": "",
+                "categories": [
+                    {
+                        "name": "Literature",
+                        "slug": "literature"
+                    },
+                    {
+                        "name": "Social Group",
+                        "slug": "social-group"
+                    }
+                ],
+                "service_areas": []
+            },
+            {
+                "id": "b32712a9-844c-4354-809c-ad3ad1c9d30e",
+                "name": "Duns Tea Dance",
+                "description": "A Tea Dance is an afternoon social dance with music, tea and cake. It is a great way to move, meet people and have fun! Every second Wednesday of every month  from 2-4pm, £3/ person includes refreshments and cake/scones. Everyone welcome.",
+                "url": "",
+                "phone": "",
+                "email": "",
+                "categories": [
+                    {
+                        "name": "Social Group",
+                        "slug": "social-group"
+                    }
+                ],
+                "service_areas": []
+            }
+        ]
+    }
+}
+```
+
+This endpoint retrieves a single organisation resource. 
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/organisations/<organisation_id_or_slug>`
+
+You can view an HTML formatted version of the result if you view the endpoint in your browser eg: [https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d](https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d)
 
 
 ## Categories
