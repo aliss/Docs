@@ -236,6 +236,12 @@
                     <a href="#service-search" class="toc-h2 toc-link" data-title="service-search">Service search</a>
                   </li>
                   <li>
+                    <a href="#service" class="toc-h2 toc-link" data-title="service">Service</a>
+                  </li>
+                  <li>
+                    <a href="#organisation" class="toc-h2 toc-link" data-title="organisation">Organisation</a>
+                  </li>
+                  <li>
                     <a href="#categories" class="toc-h2 toc-link" data-title="categories">Categories</a>
                   </li>
                   <li>
@@ -266,7 +272,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the ALISS API! You can use our API to search for health and wellbeing services in Scotland.</p>
+<p>Welcome to the ALISS API docs! You can use our API to search for health and wellbeing services in Scotland.</p>
 
 <p>Both these docs and ALISS are open source. If you&#39;d like to improve <a href="https://github.com/aliss/Docs">this documentation</a> or <a href="https://github.com/aliss/ALISS">ALISS itself</a> please add an issue or submit a pull request.</p>
 <h3 id='aliss-js'>aliss.js</h3>
@@ -600,13 +606,11 @@
 <td>url to previous page</td>
 </tr>
 <tr>
-<td>results</td>
+<td>data</td>
 <td>collection of service objects (see below)</td>
 </tr>
 </tbody></table>
-
-<p><strong>Service object</strong></p>
-
+<h4 id='service-object'>Service object</h4>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -682,6 +686,191 @@
 <td>timestamp (<a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a>) of when the service entry was last edited</td>
 </tr>
 </tbody></table>
+<h2 id='service'>Service</h2><h3 id='retrieve-a-single-service'>Retrieve a single service</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/services/&lt;service_id_or_slug&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"licence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by/4.0/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Statistics data © Crown copyright and database right 2018"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Records of Scotland data licensed under the Open Government Licence v3.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains contributions from ALISS users"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/terms-and-conditions"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b5eaf69-b5dc-4aea-9970-42fa3b590b91"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leitholm Soup Social"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leitholm Soup Social offers a healthy soup and sandwich, companionship and endless cups of teas/coffees. Pay as much as you feel!</span><span class="se">\r\n</span><span class="s2">Every Thursday from 12-2pm. (From the first week of October to the last week of April)"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01835825080"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"communitycapacity@scotborders.gov.uk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Group"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-group"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lunch Club"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lunch-club"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24e42647-da5f-46ec-b0c6-458465d2467d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SBC Community Capacity Building"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/sbc-community-capacity-building-0/"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"permalink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sbc-community-capacity-building-0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leitholm-soup-social-1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/leitholm-soup-social-1/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"permalink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-20T14:45:51.344207Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a single service resource. </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v4/services/&lt;service_id_or_slug&gt;</code></p>
+
+<p>You can view an HTML formatted version of the result if you view the endpoint in your browser eg: <a href="https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91">https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91</a></p>
+<h3 id='response-structure-2'>Response structure</h3>
+<p>See <a href="#service-object"><code>service object</code></a>.</p>
+<h2 id='organisation'>Organisation</h2><h3 id='retrieve-a-single-organisation'>Retrieve a single organisation</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/organisations/&lt;organisation_id_or_slug&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"licence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://creativecommons.org/licenses/by/4.0/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Statistics data © Crown copyright and database right 2018"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains National Records of Scotland data licensed under the Open Government Licence v3.0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contains contributions from ALISS users"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/terms-and-conditions"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24e42647-da5f-46ec-b0c6-458465d2467d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SBC Community Capacity Building"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"aliss_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/sbc-community-capacity-building-0/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"permalink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sbc-community-capacity-building-0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The aim of the Community Capacity Building team is to actively</span><span class="se">\r\n</span><span class="s2">foster and encourage the development of resilience within</span><span class="se">\r\n</span><span class="s2">communities to allow them to become stronger and more</span><span class="se">\r\n</span><span class="s2">self-reliant through offering the right support at the right time"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.facebook.com/SBC-Community-Capacity-Building-379248189076883/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01835825080"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"communitycapacity@scotborders.gov.uk"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_edited"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-23T09:28:38.946621Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9fd62ed3-b6a3-46dd-8712-8727f7ff9012"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Community Capacity Building Link Worker Service"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The CCB Link Worker Service offers one to one enablement support for older people or adults with long-term conditions - this service is available in Berwickshire."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07917 277 139"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"juliana.amaral@scotborder.gov.uk"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food &amp; Nutrition"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food-nutrition"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conditions"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conditions"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Health &amp; Social Care Services"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"health-social-care-services"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Activity"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"activity"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S37000025"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scottish Borders"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46237477-2831-4d8a-a78b-0069efbbb316"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Writing for Wellbeing"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A great way to use writing for self-expression in a creative way. The group meets every first Monday of the month from 2-4:30pm,  £2 per person which includes tea/coffee and biscuits."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Literature"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"literature"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Group"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-group"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b32712a9-844c-4354-809c-ad3ad1c9d30e"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duns Tea Dance"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Tea Dance is an afternoon social dance with music, tea and cake. It is a great way to move, meet people and have fun! Every second Wednesday of every month  from 2-4pm, £3/ person includes refreshments and cake/scones. Everyone welcome."</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social Group"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social-group"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"service_areas"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a single organisation resource. </p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://www.aliss.org/api/v4/organisations/&lt;organisation_id_or_slug&gt;</code></p>
+
+<p>You can view an HTML formatted version of the result if you view the endpoint in your browser eg: <a href="https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d">https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d</a></p>
 <h2 id='categories'>Categories</h2><h3 id='list-all-categories'>List all Categories</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v4/categories/"</span>
 </code></pre>
 <blockquote>
@@ -775,7 +964,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all categories. </p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v4/categories/</code></p>
 
 <p>You can view an HTML formatted version of the result with your browser: <a href="https://www.aliss.org/api/v4/categories/">https://www.aliss.org/api/v4/categories/</a></p>
@@ -843,7 +1032,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all service areas. An HTML formatted version of the result is available here: http://www.aliss.org/api/v4/service-areas/</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v4/service-areas/</code></p>
 
 <p>You can view an HTML formatted version of the result with your browser: <a href="https://www.aliss.org/api/v4/service-areas/">https://www.aliss.org/api/v4/service-areas/</a></p>
@@ -936,7 +1125,7 @@
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/search/</code></p>
 <h3 id='query-parameters-2'>Query parameters</h3>
 <table><thead>
@@ -986,7 +1175,7 @@
 <p><code>GET https://www.aliss.org/api/v3/search/?location_type=local&amp;postcode=G2 4AA</code></p>
 
 <p>You can filter by location type by using the location type query parameter and passing in either &#39;local&#39; or &#39;national&#39;.</p>
-<h3 id='response-structure-2'>Response structure</h3>
+<h3 id='response-structure-3'>Response structure</h3>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -1093,7 +1282,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all categories.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/categories/</code></p>
 <h2 id='service-areas-2'>Service areas</h2><h3 id='list-all-service-areas-2'>List all service areas</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://www.aliss.org/api/v3/service-areas/"</span>
 </code></pre>
@@ -1149,7 +1338,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all service areas.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://www.aliss.org/api/v3/service-areas/</code></p>
 
       </div>
