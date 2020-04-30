@@ -29,6 +29,712 @@ ALISS, contains data from a variety of sources, including:
 - [Scottish Postcode Directory](https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract) (National Records of Scotland) shared under the [Open Government Licence (v3.0)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
 - Contributions by [ALISS users](https://www.aliss.org/terms-and-conditions/)
 
+# API Version 4.1
+
+## Service search
+
+```shell
+curl "https://www.aliss.org/api/v4/services/?postcode=G2 4AA"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+{
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
+    },
+    "count": 534,
+    "next": "https://www.aliss.org/api/v4/services/?page=2&postcode=G2+4AA",
+    "previous": null,
+    "data": [
+        {
+            "id": "3da126c1-44b4-4095-a1d1-db21787d0b6a",
+            "organisation": {
+                "id": "abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "name": "Loaves and Fishes",
+                "aliss_url": "https://www.aliss.org/organisations/loaves-and-fishes-0/",
+                "permalink": "https://www.aliss.org/organisations/abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "is_claimed": false,
+                "slug": "loaves-and-fishes-0"
+            },
+            "name": "Food Parcels",
+            "description": "Every Thursday night we distribute food parcels to the people who come to our meal. We also distribute the food parcels directly to the people in need that we hear about through our various contacts. We distribute food parcels through social work departments who rely on us to support the people they help.",
+            "slug": "food-parcels-1",
+            "url": "http://www.loavesandfishes.org.uk/contact.htm",
+            "phone": "01355 224 375",
+            "email": "enquiries@loavesandfishes.org.uk",
+            "categories": [
+                {
+                    "name": "Food & Nutrition",
+                    "slug": "food-nutrition"
+                },
+                {
+                    "name": "Foodbank",
+                    "slug": "foodbank"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "c8b7db71-f879-47f9-b4e0-ce593d839628",
+                    "formatted_address": "Renfield St Stephens Centre, 260 Bath Street, Glasgow, G2 4JP",
+                    "name": "Renfield St Stephens Centre",
+                    "description": "",
+                    "street_address": "260 Bath Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4JP",
+                    "country": "GB",
+                    "latitude": 55.8652885,
+                    "longitude": -4.2672764
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/food-parcels-1/",
+            "permalink": "https://www.aliss.org/services/3da126c1-44b4-4095-a1d1-db21787d0b6a",
+            "last_updated": "2018-09-17T16:22:50.910751+00:00"
+        },
+        {
+            "id": "68c6347c-e069-4c7e-b762-a41126280faf",
+            "organisation": {
+                "id": "abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "name": "Loaves and Fishes",
+                "aliss_url": "https://www.aliss.org/organisations/loaves-and-fishes-0/",
+                "permalink": "https://www.aliss.org/organisations/abd47d4d-1ece-4c38-981e-4ccba17013cf",
+                "is_claimed": false,
+                "slug": "loaves-and-fishes-0"
+            },
+            "name": "Providing Meals",
+            "description": "Each Monday and Thursday evening we provide a sit down, hot meal for around 40 men and women at the Oasis café in Renfield St Stephen’s Church Centre. It may be the only proper meal some of them get. We’ve been providing a sit down meals service for almost ten years and we truly believe that this is a far more beneficial service as it provides a safe, relaxing environment to enjoy the food and the company of others.",
+            "slug": "providing-meals-0",
+            "url": "http://www.loavesandfishes.org.uk/providing-meals.htm",
+            "phone": "01355 224 375",
+            "email": "enquiries@loavesandfishes.org.uk",
+            "categories": [
+                {
+                    "name": "Food & Nutrition",
+                    "slug": "food-nutrition"
+                },
+                {
+                    "name": "Free Meals",
+                    "slug": "free-meals"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "c8b7db71-f879-47f9-b4e0-ce593d839628",
+                    "formatted_address": "Renfield St Stephens Centre, 260 Bath Street, Glasgow, G2 4JP",
+                    "name": "Renfield St Stephens Centre",
+                    "description": "",
+                    "street_address": "260 Bath Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4JP",
+                    "country": "GB",
+                    "latitude": 55.8652885,
+                    "longitude": -4.2672764
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/providing-meals-0/",
+            "permalink": "https://www.aliss.org/services/68c6347c-e069-4c7e-b762-a41126280faf",
+            "last_updated": "2018-09-17T16:22:50.582230+00:00"
+        },
+        {
+            "id": "fed34ae8-cf8b-4d6d-9250-6a7d56809d8d",
+            "organisation": {
+                "id": "0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "name": "CrossReach",
+                "aliss_url": "https://www.aliss.org/organisations/crossreach-0/",
+                "permalink": "https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "is_claimed": false,
+                "slug": "crossreach-0"
+            },
+            "name": "One-to-one counselling",
+            "description": "Sometimes we experience difficulties and may or may not know why we feel uneasy, anxious or depressed. Counselling provides the chance to explore feelings and experiences in a safe and confidential environment with someone who is trained to help you.\r\n\r\nThe counsellor won’t give you advice or tell you what to do. They will give you time, space and their particular skills to help you work toward a more satisfactory life.",
+            "slug": "one-to-one-counselling-2",
+            "url": "http://www.crossreach.org.uk/one-one-counselling",
+            "phone": "0141 221 1535",
+            "email": "tomallan@crossreach.org.uk",
+            "categories": [
+                {
+                    "name": "Mental Health Issues",
+                    "slug": "mental-health"
+                },
+                {
+                    "name": "Counselling",
+                    "slug": "counselling"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "619d32db-e780-44ab-8ed2-5180c56fc1c3",
+                    "formatted_address": "Tom Allan Centre, 23 Elmbank Street, Glasgow, G2 4PB",
+                    "name": "Tom Allan Centre",
+                    "description": "",
+                    "street_address": "23 Elmbank Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4PB",
+                    "country": "GB",
+                    "latitude": 55.8639028,
+                    "longitude": -4.2685076
+                }
+            ],
+            "service_areas": [
+                {
+                    "code": "S12000046",
+                    "type": "Local Authority",
+                    "name": "Glasgow City"
+                }
+            ],
+            "aliss_url": "https://www.aliss.org/services/one-to-one-counselling-2/",
+            "permalink": "https://www.aliss.org/services/fed34ae8-cf8b-4d6d-9250-6a7d56809d8d",
+            "last_updated": "2018-09-17T16:22:47.106955+00:00"
+        },
+        {
+            "id": "1615ffd3-2fa4-4b5f-90bc-3586cb99a552",
+            "organisation": {
+                "id": "0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "name": "CrossReach",
+                "aliss_url": "https://www.aliss.org/organisations/crossreach-0/",
+                "permalink": "https://www.aliss.org/organisations/0e5d57d2-2e3d-4538-9c4f-d72770d608a7",
+                "is_claimed": false,
+                "slug": "crossreach-0"
+            },
+            "name": "Bluebell-PND- Counselling Service",
+            "description": "Bluebell Perinatal Depression Counselling Service is a specialist Postnatal Depression Service for depression which begins in pregnancy or shortly after birth.",
+            "slug": "bluebell-pnd-counselling-service-0",
+            "url": "https://www.crossreach.org.uk/our-locations/crossreach-bluebell-perinatal-service",
+            "phone": "0141 221 3003",
+            "email": "bluebell@crossreach.org.uk",
+            "categories": [
+                {
+                    "name": "Counselling",
+                    "slug": "counselling"
+                },
+                {
+                    "name": "Depression",
+                    "slug": "depression"
+                },
+                {
+                    "name": "Parent & Family Support",
+                    "slug": "parent-family-support"
+                }
+            ],
+            "locations": [
+                {
+                    "id": "619d32db-e780-44ab-8ed2-5180c56fc1c3",
+                    "formatted_address": "Tom Allan Centre, 23 Elmbank Street, Glasgow, G2 4PB",
+                    "name": "Tom Allan Centre",
+                    "description": "",
+                    "street_address": "23 Elmbank Street",
+                    "locality": "Glasgow",
+                    "region": "",
+                    "state": "",
+                    "postal_code": "G2 4PB",
+                    "country": "GB",
+                    "latitude": 55.8639028,
+                    "longitude": -4.2685076
+                }
+            ],
+            "service_areas": [],
+            "aliss_url": "https://www.aliss.org/services/bluebell-pnd-counselling-service-0/",
+            "permalink": "https://www.aliss.org/services/1615ffd3-2fa4-4b5f-90bc-3586cb99a552",
+            "last_updated": "2018-10-25T08:27:31.354698+00:00"
+        }
+    ]
+}
+```
+
+The service search feature is the core of ALISS. Search returns services on ALISS filtered by geography, and optionally by keywords or categories.
+
+Services can be delivered at a specific location, or they can be delivered across a whole area or areas. Locations are specific to the organisations that run the services, whereas areas of delivery are selected from a pre-defined list. You can request the list of possible areas from the [`service-areas` endpoint](#service-areas).
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/services/`
+
+You can request an HTML formatted version of the result with your browser: [https://www.aliss.org/api/v4/services/?postcode=G2 4AA](https://www.aliss.org/api/v4/services/?postcode=G2%204AA)
+
+### Query parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+postcode | True | None | The postcode that you wish to find services relevant to
+q | False | None | This is the keywords with which to do a full text search of the services
+category | False | None | The category slugs that you wish to filter the search by
+location_type | False | None | The location type of the resource, either 'local' or 'national', default searches everything
+radius | False | 5000 | The radius from the postcode that you wish the search to cover, in meters
+page_size | False | 10 | The number of results in a page (max. 100)
+
+### Filter by categories
+
+`GET https://www.aliss.org/api/v4/services/?category=money-advice&postcode=G2 4AA`
+
+You can filter by category by using the category query parameter and passing in a category slug.
+
+### Filter by location type
+
+`GET https://www.aliss.org/api/v4/services/?location_type=local&postcode=G2 4AA`
+
+You can filter by location type by using the location type query parameter and passing in either 'local' or 'national'.
+
+### Response structure
+
+Key | Description
+--- | ---
+meta | metadata associated with the result
+count | number of results returned in all pages of the request
+next | url to next page
+previous | url to previous page
+data | collection of service objects (see below)
+
+#### Service object
+
+Key | Description
+--- | ---
+id | UUID for the service
+name | name of the service
+organisation.id | object with details of the organisation that runs the service
+organisation.name | name of the organisation
+organisation.permalink | url to the organisation entry on aliss.org
+organisation.aliss_url | human friendly url to the organisation entry on aliss.org
+organisation.is_claimed | whether a representative of the organisation has claimed editorial privelege over the entry
+description | free text description of the service
+url | url to a site describing the service 
+phone | contact telephone number for the service
+email | contact email address for the service
+categories | collection of category objects associated with the service including a human readable name and slug
+locations | collection of location objects associated with the service
+service_areas | collection of service area objects associated with the service, a full list of possible areas can be requested from the [service areas endpoint](#service-areas)
+permalink | url to the service entry on aliss.org
+aliss_url | human friendly url to the service entry on aliss.org
+last_updated | timestamp ([ISO 8601](https://www.w3.org/TR/NOTE-datetime)) of when the service entry was last edited
+
+
+## Service
+
+### Retrieve a single service
+
+
+```shell
+curl "https://www.aliss.org/api/v4/services/<service_id_or_slug>"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
+    },
+    "data": {
+        "id": "4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "name": "Leitholm Soup Social",
+        "description": "Leitholm Soup Social offers a healthy soup and sandwich, companionship and endless cups of teas/coffees. Pay as much as you feel!\r\nEvery Thursday from 12-2pm. (From the first week of October to the last week of April)",
+        "url": "",
+        "phone": "01835825080",
+        "email": "communitycapacity@scotborders.gov.uk",
+        "categories": [
+            {
+                "name": "Social Group",
+                "slug": "social-group"
+            },
+            {
+                "name": "Lunch Club",
+                "slug": "lunch-club"
+            }
+        ],
+        "service_areas": [],
+        "organisation": {
+            "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
+            "name": "SBC Community Capacity Building",
+            "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
+            "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
+            "is_claimed": false,
+            "slug": "sbc-community-capacity-building-0"
+        },
+        "slug": "leitholm-soup-social-1",
+        "aliss_url": "https://www.aliss.org/services/leitholm-soup-social-1/",
+        "permalink": "https://www.aliss.org/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "last_updated": "2018-12-20T14:45:51.344207Z"
+    }
+}
+```
+
+This endpoint retrieves a single service resource. 
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/services/<service_id_or_slug>`
+
+You can view an HTML formatted version of the result if you view the endpoint in your browser eg: [https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91](https://www.aliss.org/api/v4/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91)
+
+### Response structure
+
+See [`service object`](#service-object).
+
+
+## Organisation
+
+### Retrieve a single organisation
+
+```shell
+curl "https://www.aliss.org/api/v4/organisations/<organisation_id_or_slug>"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
+    },
+    "data": {
+        "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
+        "name": "SBC Community Capacity Building",
+        "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
+        "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
+        "is_claimed": false,
+        "slug": "sbc-community-capacity-building-0",
+        "description": "The aim of the Community Capacity Building team is to actively\r\nfoster and encourage the development of resilience within\r\ncommunities to allow them to become stronger and more\r\nself-reliant through offering the right support at the right time",
+        "facebook": "https://www.facebook.com/SBC-Community-Capacity-Building-379248189076883/",
+        "twitter": "",
+        "url": "",
+        "phone": "01835825080",
+        "email": "communitycapacity@scotborders.gov.uk",
+        "last_edited": "2018-11-23T09:28:38.946621Z",
+        "services": [
+            {
+                "id": "9fd62ed3-b6a3-46dd-8712-8727f7ff9012",
+                "name": "Community Capacity Building Link Worker Service",
+                "description": "The CCB Link Worker Service offers one to one enablement support for older people or adults with long-term conditions - this service is available in Berwickshire.",
+                "url": "",
+                "phone": "07917 277 139",
+                "email": "juliana.amaral@scotborder.gov.uk",
+                "categories": [
+                    {
+                        "name": "Food & Nutrition",
+                        "slug": "food-nutrition"
+                    },
+                    {
+                        "name": "Conditions",
+                        "slug": "conditions"
+                    },
+                    {
+                        "name": "Health & Social Care Services",
+                        "slug": "health-social-care-services"
+                    },
+                    {
+                        "name": "Activity",
+                        "slug": "activity"
+                    }
+                ],
+                "service_areas": [
+                    {
+                        "code": "S37000025",
+                        "type": "4",
+                        "name": "Scottish Borders"
+                    }
+                ]
+            },
+            {
+                "id": "46237477-2831-4d8a-a78b-0069efbbb316",
+                "name": "Writing for Wellbeing",
+                "description": "A great way to use writing for self-expression in a creative way. The group meets every first Monday of the month from 2-4:30pm,  £2 per person which includes tea/coffee and biscuits.",
+                "url": "",
+                "phone": "",
+                "email": "",
+                "categories": [
+                    {
+                        "name": "Literature",
+                        "slug": "literature"
+                    },
+                    {
+                        "name": "Social Group",
+                        "slug": "social-group"
+                    }
+                ],
+                "service_areas": []
+            },
+            {
+                "id": "b32712a9-844c-4354-809c-ad3ad1c9d30e",
+                "name": "Duns Tea Dance",
+                "description": "A Tea Dance is an afternoon social dance with music, tea and cake. It is a great way to move, meet people and have fun! Every second Wednesday of every month  from 2-4pm, £3/ person includes refreshments and cake/scones. Everyone welcome.",
+                "url": "",
+                "phone": "",
+                "email": "",
+                "categories": [
+                    {
+                        "name": "Social Group",
+                        "slug": "social-group"
+                    }
+                ],
+                "service_areas": []
+            }
+        ]
+    }
+}
+```
+
+This endpoint retrieves a single organisation resource. 
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/organisations/<organisation_id_or_slug>`
+
+You can view an HTML formatted version of the result if you view the endpoint in your browser eg: [https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d](https://www.aliss.org/api/v4/organisations/24e42647-da5f-46ec-b0c6-458465d2467d)
+
+
+## Categories
+
+### List all Categories
+
+```shell
+curl "https://www.aliss.org/api/v4/categories/"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "attribution": [],
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "data": [
+        {
+            "name": "Housing and Homelessness",
+            "slug": "housing-and-homelessness",
+            "sub_categories": [
+                {
+                    "name": "Social Housing",
+                    "slug": "social-housing",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Sheltered Housing",
+                    "slug": "sheltered-housing",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Housing Advice",
+                    "slug": "housing-advice",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Housing Support",
+                    "slug": "housing-support",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Housing Adaptations",
+                    "slug": "housing-adaptations",
+                    "sub_categories": []
+                }
+            ]
+        },
+        {
+            "name": "Food & Nutrition",
+            "slug": "food-nutrition",
+            "sub_categories": [
+                {
+                    "name": "Community Garden",
+                    "slug": "community-garden",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Food Delivery",
+                    "slug": "food-delivery",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Foodbank",
+                    "slug": "foodbank",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Free Meals",
+                    "slug": "free-meals",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Community Cafe",
+                    "slug": "community-cafe",
+                    "sub_categories": []
+                }
+            ]
+        },
+        {
+            "name": "Money",
+            "slug": "money",
+            "sub_categories": [
+                {
+                    "name": "Money Advice",
+                    "slug": "money-advice",
+                    "sub_categories": []
+                },
+                {
+                    "name": "Energy Advice",
+                    "slug": "energy-advice",
+                    "sub_categories": []
+                }
+            ]
+        }
+    ]
+}
+```
+
+This endpoint retrieves all categories. 
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/categories/`
+
+You can view an HTML formatted version of the result with your browser: [https://www.aliss.org/api/v4/categories/](https://www.aliss.org/api/v4/categories/)
+
+
+## Service areas
+
+### List all Service areas
+
+```shell
+curl "https://www.aliss.org/api/v4/service-areas/"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            }
+        ],
+        "licence": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "data": [
+        {
+            "code": "S12000005",
+            "type": "Local Authority",
+            "name": "Clackmannanshire"
+        },
+        {
+            "code": "S12000006",
+            "type": "Local Authority",
+            "name": "Dumfries and Galloway"
+        },
+        {
+            "code": "S12000008",
+            "type": "Local Authority",
+            "name": "East Ayrshire"
+        },
+        {
+            "code": "S12000010",
+            "type": "Local Authority",
+            "name": "East Lothian"
+        },
+        {
+            "code": "S12000011",
+            "type": "Local Authority",
+            "name": "East Renfrewshire"
+        },
+        {
+            "code": "S12000013",
+            "type": "Local Authority",
+            "name": "Na h-Eileanan Siar"
+        },
+        {
+            "code": "S12000014",
+            "type": "Local Authority",
+            "name": "Falkirk"
+        },
+        {
+            "code": "S12000015",
+            "type": "Local Authority",
+            "name": "Fife"
+        }
+    ]
+}
+```
+
+This endpoint retrieves all service areas. An HTML formatted version of the result is available here: http://www.aliss.org/api/v4/service-areas/
+
+### HTTP Request
+
+`GET https://www.aliss.org/api/v4/service-areas/`
+
+You can view an HTML formatted version of the result with your browser: [https://www.aliss.org/api/v4/service-areas/](https://www.aliss.org/api/v4/service-areas/)
+
+## Changes since v4
+
+The main difference between v4 and v4.1 is that the API is the same as the search API, except it does not require a postcode
+
 
 # API Version 4
 
