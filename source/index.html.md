@@ -822,7 +822,7 @@ The main difference between v4 and v4.1 is that the API is the same as the searc
 
 `GET https://www.aliss.org/api/v4/import/`
 
-You can view an HTML formatted version of the result with your browser:
+This is endpoint returns all services in json format.
 
 # API Version 4
 
