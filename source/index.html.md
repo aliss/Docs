@@ -818,6 +818,12 @@ You can view an HTML formatted version of the result with your browser: [https:/
 
 The main difference between v4 and v4.1 is that the API is the same as the search API, there is a new api endpoint that takes no parameters (postcode) and returns all records
 
+## HTTP Import
+
+`GET https://www.aliss.org/api/v4/import/`
+
+You can view an HTML formatted version of the result with your browser:
+
 # API Version 4
 
 ## Service search
