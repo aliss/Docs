@@ -418,58 +418,74 @@ curl "https://www.aliss.org/api/v4/services/<service_id_or_slug>"
 
 ```json
 {
-  "meta": {
-    "licence": "https://creativecommons.org/licenses/by/4.0/",
-    "attribution": [
-      {
-        "text": "Contains National Statistics data © Crown copyright and database right 2018",
-        "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
-      },
-      {
-        "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
-        "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
-      },
-      {
-        "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
-        "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
-      },
-      {
-        "text": "Contains contributions from ALISS users",
-        "url": "https://www.aliss.org/terms-and-conditions"
-      }
-    ]
-  },
-  "data": {
-    "id": "4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
-    "name": "Leitholm Soup Social",
-    "description": "Leitholm Soup Social offers a healthy soup and sandwich, companionship and endless cups of teas/coffees. Pay as much as you feel!\r\nEvery Thursday from 12-2pm. (From the first week of October to the last week of April)",
-    "url": "",
-    "phone": "01835825080",
-    "email": "communitycapacity@scotborders.gov.uk",
-    "categories": [
-      {
-        "name": "Social Group",
-        "slug": "social-group"
-      },
-      {
-        "name": "Lunch Club",
-        "slug": "lunch-club"
-      }
-    ],
-    "service_areas": [],
-    "organisation": {
-      "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
-      "name": "SBC Community Capacity Building",
-      "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
-      "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
-      "is_claimed": false,
-      "slug": "sbc-community-capacity-building-0"
+    "meta": {
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": [
+            {
+                "text": "Contains National Statistics data © Crown copyright and database right 2018",
+                "url": "http://geoportal.statistics.gov.uk/datasets/local-authority-districts-december-2016-generalised-clipped-boundaries-in-the-uk/"
+            },
+            {
+                "text": "Contains information from the Scottish Charity Register supplied by the Office of the Scottish Charity Regulator and licensed under the Open Government Licence v2.0",
+                "url": "https://www.oscr.org.uk/about-charities/search-the-register/charity-register-download"
+            },
+            {
+                "text": "Contains National Records of Scotland data licensed under the Open Government Licence v3.0",
+                "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography/nrs-postcode-extract"
+            },
+            {
+                "text": "Contains contributions from ALISS users",
+                "url": "https://www.aliss.org/terms-and-conditions"
+            }
+        ]
     },
-    "slug": "leitholm-soup-social-1",
-    "aliss_url": "https://www.aliss.org/services/leitholm-soup-social-1/",
-    "permalink": "https://www.aliss.org/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
-    "last_updated": "2018-12-20T14:45:51.344207Z"
-  }
+    "data": {
+        "id": "4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "name": "Leitholm Soup Social",
+        "description": "Leitholm Soup Social offers a healthy soup and sandwich, companionship and endless cups of teas/coffees. Pay as much as you feel!\r\nEvery Thursday from 12-2pm. (From the first week of October to the last week of April)",
+        "url": "",
+        "phone": "01835825080",
+        "email": "communitycapacity@scotborders.gov.uk",
+        "categories": [
+            {
+                "name": "Social Group",
+                "slug": "social-group"
+            },
+            {
+                "name": "Lunch Club",
+                "slug": "lunch-club"
+            }
+        ],
+        "service_areas": [],
+        "organisation": {
+            "id": "24e42647-da5f-46ec-b0c6-458465d2467d",
+            "name": "SBC Community Capacity Building",
+            "aliss_url": "https://www.aliss.org/organisations/sbc-community-capacity-building-0/",
+            "permalink": "https://www.aliss.org/organisations/24e42647-da5f-46ec-b0c6-458465d2467d",
+            "is_claimed": false,
+            "slug": "sbc-community-capacity-building-0"
+        },
+        "slug": "leitholm-soup-social-1",
+        "aliss_url": "https://www.aliss.org/services/leitholm-soup-social-1/",
+        "permalink": "https://www.aliss.org/services/4b5eaf69-b5dc-4aea-9970-42fa3b590b91",
+        "last_updated": "2018-12-20T14:45:51.344207Z",
+        "locations": [
+            {
+                "id": "8ff3c1ea-ee06-4c2a-a7f1-a8b8bf9169b5",
+                "formatted_address": "the Plough Inn, Main Street, Leitholm, TD12 4JN",
+                "name": "the Plough Inn",
+                "description": "",
+                "street_address": "Main Street",
+                "locality": "Leitholm",
+                "region": "",
+                "state": "",
+                "postal_code": "TD12 4JN",
+                "country": "GB",
+                "latitude": 55.6907691,
+                "longitude": -2.3346439
+            }
+        ]
+    }
 }
 ```
 
